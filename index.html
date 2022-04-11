@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jquery crud</title>
+        <script src="./vender/js/jquery-3.6.0.min.js"></script>
+        <script src="./vender/js/popper.min.js"></script>
+        <script src="./vender/js/bootstrap.min.js"></script>
+        <script src="./js/script.js"></script>
+        <link rel="stylesheet" href="./vender/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Curd Using Recipes API</h1>
+            <!-- Button trigger modal -->
+            <button
+                type="button"
+                class="btn btn-info"
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+            >
+                Add New Recipe
+            </button>
+
+            <!--add  Modal -->
+            <div
+                class="modal fade"
+                id="addModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                New Recipe
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label
+                                        for="addRecipeTitle"
+                                        class="form-label"
+                                        >Recipe Title</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="addRecipeTitle"
+                                        aria-describedby=""
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label
+                                        for="addRecipeBody"
+                                        class="form-label"
+                                        >Recipe Body</label
+                                    >
+                                    <textarea
+                                        type="textarea"
+                                        class="form-control"
+                                        id="addRecipeBody"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                                <div id="Help" class="form-text"></div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button
+                                id="addBtn"
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                ADD RECIPE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Update modal -->
+            <div
+                class="modal fade"
+                id="updateModal"
+                tabindex="-1"
+                aria-labelledby="updateModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateModalLabel">
+                                Update Recipe
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div>
+                                    <input
+                                        type="hidden"
+                                        class="form-control"
+                                        id="updateRecipeId"
+                                        aria-describedby=""
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label
+                                        for="updateRecipeTitle"
+                                        class="form-label"
+                                        >Recipe Title</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="updateRecipeTitle"
+                                        aria-describedby=""
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label
+                                        for="updateRecipeBody"
+                                        class="form-label"
+                                        >Recipe Body</label
+                                    >
+                                    <textarea
+                                        type="textarea"
+                                        class="form-control"
+                                        id="updateRecipeBody"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                                <div id="updateHelp" class="form-text"></div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button
+                                id="updateBtn"
+                                type="submit"
+                                class="btn btn-warning"
+                            >
+                                Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="recipePlace" class="loadAnimation">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </body>
+</html>
