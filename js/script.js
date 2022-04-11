@@ -43,7 +43,7 @@ function handleUpdate() {
 
     if (title == "") {
         $("#updateHelp").html(
-            "Recipe Must Have a Titl with minimum 5 characters"
+            "Recipe Must Have a Title with minimum 5 characters"
         );
     } else {
         $.ajax({
@@ -116,7 +116,6 @@ function loadRecipies() {
                 
             </div>`);
             }
-            console.log(response);
         },
     });
 }
