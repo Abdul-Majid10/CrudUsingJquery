@@ -42,7 +42,9 @@ function handleUpdate() {
     var body = $("#updateRecipeBody").val();
 
     if (title == "") {
-        $("#updateHelp").html("Recipe Must Have a Title");
+        $("#updateHelp").html(
+            "Recipe Must Have a Titl with minimum 5 characters"
+        );
     } else {
         $.ajax({
             type: "PUT",
@@ -66,8 +68,10 @@ function addRecipe() {
     var title = $("#addRecipeTitle").val();
     var body = $("#addRecipeBody").val();
 
-    if (title == "") {
-        $("#Help").html("New Recipe Must Have a Title");
+    if (title.length < 5) {
+        $("#Help").html(
+            "New Recipe Must Have a Title with minimum 5 characters"
+        );
     } else {
         $.ajax({
             type: "POST",
