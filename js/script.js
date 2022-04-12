@@ -41,7 +41,7 @@ function handleUpdate() {
     var title = $("#updateRecipeTitle").val();
     var body = $("#updateRecipeBody").val();
 
-    if (title == "") {
+    if (title.length < 5) {
         $("#updateHelp").html(
             "Recipe Must Have a Title with minimum 5 characters"
         );
